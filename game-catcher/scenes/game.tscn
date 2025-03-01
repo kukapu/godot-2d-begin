@@ -1,19 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1v6xw10l4vtv"]
+[gd_scene load_steps=5 format=3 uid="uid://c1v6xw10l4vtv"]
 
 [ext_resource type="Texture2D" uid="uid://dfg3sc4f6g8rr" path="res://assets/GameBg.png" id="1_05qgb"]
+[ext_resource type="Script" path="res://game.gd" id="1_hwn4e"]
 [ext_resource type="PackedScene" uid="uid://cex8q6ebwbkca" path="res://scenes/paddle.tscn" id="2_re3oi"]
 [ext_resource type="PackedScene" uid="uid://c4k8wfkq43nme" path="res://scenes/gem.tscn" id="3_ut15b"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_hwn4e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(582, 320)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_05qgb")
 
+[node name="Gem" parent="." instance=ExtResource("3_ut15b")]
+position = Vector2(335, 49)
+
+[node name="Gem2" parent="." instance=ExtResource("3_ut15b")]
+position = Vector2(937, 57)
+speed = 200.0
+
 [node name="Paddle" parent="." instance=ExtResource("2_re3oi")]
 position = Vector2(573, 595)
-scale = Vector2(1, 1)
 
-[node name="Gem" parent="Paddle" instance=ExtResource("3_ut15b")]
-position = Vector2(-440, -548)
+[connection signal="on_off_outside_gem" from="Gem" to="." method="_on_off_outside_gem"]
+[connection signal="on_off_outside_gem" from="Gem2" to="." method="_on_off_outside_gem"]
