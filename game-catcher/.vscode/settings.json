@@ -1,0 +1,11 @@
+{
+  "godotTools.editorPath.godot4": "C:\\Godot\\Godot_v4.3-stable_win64.exe",
+  "godot.lsp.serverPort": 6005,
+  "editor.formatOnSave": true,
+  "godot.editor.detectProjectPath": true,
+  "godot.help.connectToLSP": true,
+  "godot.editor.customArguments": [
+    "--path",
+    "${workspaceFolder}"
+  ],
+}
