@@ -1,4 +1,4 @@
-extends Area2D
+class_name Gem extends Area2D
 
 signal on_off_outside_gem
 

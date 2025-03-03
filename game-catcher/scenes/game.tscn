@@ -1,27 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1v6xw10l4vtv"]
+[gd_scene load_steps=7 format=3 uid="uid://c1v6xw10l4vtv"]
 
 [ext_resource type="Texture2D" uid="uid://dfg3sc4f6g8rr" path="res://assets/GameBg.png" id="1_05qgb"]
 [ext_resource type="Script" path="res://game.gd" id="1_hwn4e"]
 [ext_resource type="PackedScene" uid="uid://cex8q6ebwbkca" path="res://scenes/paddle.tscn" id="2_re3oi"]
 [ext_resource type="PackedScene" uid="uid://c4k8wfkq43nme" path="res://scenes/gem.tscn" id="3_ut15b"]
+[ext_resource type="AudioStream" uid="uid://clo3qmkvv2yr8" path="res://assets/bgm_action_5.mp3" id="5_vmf4t"]
+[ext_resource type="AudioStream" uid="uid://bxubxm4qjj6u5" path="res://assets/spell1_0.wav" id="6_ne6p4"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_hwn4e")
+gem_scene = ExtResource("3_ut15b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(582, 320)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_05qgb")
 
-[node name="Gem" parent="." instance=ExtResource("3_ut15b")]
-position = Vector2(335, 49)
-
-[node name="Gem2" parent="." instance=ExtResource("3_ut15b")]
-position = Vector2(937, 57)
-speed = 200.0
-
 [node name="Paddle" parent="." instance=ExtResource("2_re3oi")]
 position = Vector2(573, 595)
 
-[connection signal="on_off_outside_gem" from="Gem" to="." method="_on_off_outside_gem"]
-[connection signal="on_off_outside_gem" from="Gem2" to="." method="_on_off_outside_gem"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 161.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.293336, 0.506328, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.598419, 1)
+theme_override_colors/font_outline_color = Color(0.562493, 0.704638, 0.997526, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = -3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 48
+text = "00000"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vmf4t")
+volume_db = -20.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ne6p4")
+
+[connection signal="area_entered" from="Paddle" to="." method="_on_paddle_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_spanw_gem"]

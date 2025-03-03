@@ -15,7 +15,3 @@ func _process(delta: float) -> void:
 	#	position.x += speed * delta
 	var direction = Input.get_axis("left", "right")
 	position.x += direction * speed * delta
-
-
-func _on_gem_area_entered(area: Area2D) -> void:
-	print(area)

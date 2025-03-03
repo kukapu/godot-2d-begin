@@ -1,5 +1,5 @@
 {
-  "godotTools.editorPath.godot4": "/Applications/Godot.app",
+  "godotTools.editorPath.godot4": "c:\\Godot\\Godot_v4.3-stable_win64.exe",
   "godot.lsp.serverPort": 6005,
   "editor.formatOnSave": true,
   "godot.editor.detectProjectPath": true,
