@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://drkksmho0xrh"]
+
+[ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_foxtg"]
+[ext_resource type="LabelSettings" uid="uid://bm8msg8oknwy1" path="res://assets/LG_red_64.tres" id="1_mtti2"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_foxtg")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 47.0
+offset_bottom = 49.0
+text = "0"
+label_settings = ExtResource("1_mtti2")
+horizontal_alignment = 1
+vertical_alignment = 1
