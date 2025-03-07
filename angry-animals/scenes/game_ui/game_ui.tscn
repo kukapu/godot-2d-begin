@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpnsalad1y7e2"]
+
+[ext_resource type="Script" uid="uid://bhrdckcfe0fwf" path="res://scenes/game_ui/game_ui.gd" id="1_hk0ve"]
+[ext_resource type="LabelSettings" uid="uid://beawfwxgnvomb" path="res://assets/lg_48_grey.tres" id="1_sq0em"]
+[ext_resource type="LabelSettings" uid="uid://hxukjcbh8tjo" path="res://assets/lg_90_blue.tres" id="3_8qcbp"]
+[ext_resource type="LabelSettings" uid="uid://dvnp6g25xtldb" path="res://assets/lg_48_blue_light.tres" id="4_t24f4"]
+[ext_resource type="AudioStream" uid="uid://dlgc6bshlts2e" path="res://assets/audio/jazzyfrenchy.mp3" id="5_e13be"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hk0ve")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Score" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/Score"]
+layout_mode = 2
+text = "LEVEL 1"
+label_settings = ExtResource("1_sq0em")
+
+[node name="AttemptsLabel" type="Label" parent="MarginContainer/Score"]
+layout_mode = 2
+text = "ATTEMPS 100"
+label_settings = ExtResource("1_sq0em")
+
+[node name="CompleteCont" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/CompleteCont"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LEVEL COMPLETE"
+label_settings = ExtResource("3_8qcbp")
+
+[node name="Label2" type="Label" parent="MarginContainer/CompleteCont"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PRESS SPACE"
+label_settings = ExtResource("4_t24f4")
+
+[node name="GameSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_e13be")
+volume_db = -10.0

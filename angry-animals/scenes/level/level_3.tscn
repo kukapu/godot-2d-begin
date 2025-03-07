@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://brjel14mkxfsc"]
+
+[ext_resource type="PackedScene" uid="uid://ce8rq1beaqwqh" path="res://scenes/level/level.tscn" id="1_ci4up"]
+[ext_resource type="PackedScene" uid="uid://dwih6vc5kxh3n" path="res://scenes/cup/cup.tscn" id="2_lt2g7"]
+
+[node name="Level3" instance=ExtResource("1_ci4up")]
+
+[node name="AnimalStart" parent="." index="1"]
+position = Vector2(120, 178)
+
+[node name="Cup" parent="." index="3" instance=ExtResource("2_lt2g7")]
+position = Vector2(897, 314)
+
+[node name="Cup2" parent="." index="4" instance=ExtResource("2_lt2g7")]
+position = Vector2(442, 278)
+
+[node name="Cup3" parent="." index="5" instance=ExtResource("2_lt2g7")]
+position = Vector2(413, 187)
+
+[node name="Cup4" parent="." index="6" instance=ExtResource("2_lt2g7")]
+position = Vector2(248, 501)
