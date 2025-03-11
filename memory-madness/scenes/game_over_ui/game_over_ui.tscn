@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkehnacoi1it3"]
+
+[ext_resource type="Texture2D" uid="uid://d2xsym6tg8h70" path="res://assets/ui/UIbg.png" id="1_g8b6q"]
+[ext_resource type="Script" uid="uid://d3b6kwfn1y2x1" path="res://scenes/game_over_ui/game_over_ui.gd" id="1_tif1b"]
+[ext_resource type="LabelSettings" uid="uid://bb475bkqlpx44" path="res://assets/LG_84_Green.tres" id="2_8meoh"]
+[ext_resource type="LabelSettings" uid="uid://efdir2vdny11" path="res://assets/GM_32_Dark.tres" id="3_6vlyr"]
+[ext_resource type="Texture2D" uid="uid://bydklc28kg3vx" path="res://assets/ui/blue_button00.png" id="4_2xsl7"]
+[ext_resource type="Texture2D" uid="uid://duqmdgbn3u138" path="res://assets/ui/green_button00.png" id="5_tif1b"]
+[ext_resource type="LabelSettings" uid="uid://bb630qrhxr0ef" path="res://assets/GM_32_White.tres" id="6_u0ldw"]
+
+[node name="GameOverUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_tif1b")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -192.0
+offset_right = 256.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g8b6q")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_bottom = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "YOU WIN"
+label_settings = ExtResource("2_8meoh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovesLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "asdasdasd"
+label_settings = ExtResource("3_6vlyr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitButton" type="TextureButton" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_2xsl7")
+texture_pressed = ExtResource("5_tif1b")
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+label_settings = ExtResource("6_u0ldw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

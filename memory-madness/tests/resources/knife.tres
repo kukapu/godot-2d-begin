@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://bfevhc7sxsgt7"]
+
+[ext_resource type="Script" uid="uid://dbkvq1pav44nt" path="res://tests/weapon.gd" id="1_kcv04"]
+[ext_resource type="Texture2D" uid="uid://dw2y2u6vixtdc" path="res://assets/glitch/keyBlue.png" id="2_t2pv6"]
+
+[resource]
+script = ExtResource("1_kcv04")
+damege = 1
+weapon_name = "knife"
+texture = ExtResource("2_t2pv6")
+metadata/_custom_type_script = "uid://dbkvq1pav44nt"

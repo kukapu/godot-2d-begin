@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://bxve5y2d484hb"]
+
+[ext_resource type="Script" uid="uid://dbkvq1pav44nt" path="res://tests/weapon.gd" id="1_rwn83"]
+[ext_resource type="Texture2D" uid="uid://c8v7uew2vkhty" path="res://assets/glitch/cactus.png" id="2_68dip"]
+
+[resource]
+script = ExtResource("1_rwn83")
+damege = 2
+weapon_name = "axe"
+texture = ExtResource("2_68dip")
+metadata/_custom_type_script = "uid://dbkvq1pav44nt"
+metadata/active = false

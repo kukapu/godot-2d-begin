@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8t7h1yd32h4y"]
+
+[ext_resource type="Texture2D" uid="uid://duyh0ndvt5tgc" path="res://assets/glitch/ladder_mid.png" id="1_h2t85"]
+[ext_resource type="Script" uid="uid://mxykd4sgypf7" path="res://scenes/front_sprite/front_sprite.gd" id="2_3edog"]
+
+[node name="FrontSprite" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_h2t85")
+script = ExtResource("2_3edog")
